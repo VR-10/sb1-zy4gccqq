@@ -145,8 +145,10 @@ export function SeatSelection({
                       </label>
                       <input
                         type="text"
+                        placeholder="Enter full name"
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 shadow-sm placeholder:text-gray-400
+                        focus:border-yellow-600 focus:ring-yellow-600 transition-colors duration-200"
                         onChange={(e) =>
                           handleAttendeeChange(index, 'name', e.target.value)
                         }
@@ -158,8 +160,10 @@ export function SeatSelection({
                       </label>
                       <input
                         type="number"
+                        placeholder="Enter age"
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 shadow-sm placeholder:text-gray-400
+                        focus:border-yellow-600 focus:ring-yellow-600 transition-colors duration-200"
                         onChange={(e) =>
                           handleAttendeeChange(
                             index,
@@ -176,7 +180,8 @@ export function SeatSelection({
                       <input
                         type="date"
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 shadow-sm
+                        focus:border-yellow-600 focus:ring-yellow-600 transition-colors duration-200"
                         onChange={(e) =>
                           handleAttendeeChange(index, 'dob', e.target.value)
                         }
@@ -188,8 +193,10 @@ export function SeatSelection({
                       </label>
                       <input
                         type="text"
+                        placeholder="Enter nationality"
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 shadow-sm placeholder:text-gray-400
+                        focus:border-yellow-600 focus:ring-yellow-600 transition-colors duration-200"
                         onChange={(e) =>
                           handleAttendeeChange(
                             index,
@@ -205,8 +212,10 @@ export function SeatSelection({
                       </label>
                       <input
                         type="tel"
+                        placeholder="Enter contact number"
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 shadow-sm placeholder:text-gray-400
+                        focus:border-yellow-600 focus:ring-yellow-600 transition-colors duration-200"
                         onChange={(e) =>
                           handleAttendeeChange(
                             index,
@@ -222,8 +231,10 @@ export function SeatSelection({
                       </label>
                       <input
                         type="email"
+                        placeholder="Enter email address"
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 shadow-sm placeholder:text-gray-400
+                        focus:border-yellow-600 focus:ring-yellow-600 transition-colors duration-200"
                         onChange={(e) =>
                           handleAttendeeChange(index, 'email', e.target.value)
                         }
