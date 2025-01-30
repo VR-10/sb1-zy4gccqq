@@ -97,7 +97,7 @@ export function SeatSelection({
                                   isBooked
                                     ? 'bg-gray-300 cursor-not-allowed'
                                     : isSelected
-                                    ? 'bg-blue-500 text-white'
+                                    ? 'bg-yellow-600 text-white'
                                     : 'bg-white border border-gray-300 hover:bg-gray-50'
                                 }
                               `}
@@ -120,7 +120,7 @@ export function SeatSelection({
                     <span>Available</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-blue-500"></div>
+                    <div className="w-4 h-4 bg-yellow-600"></div>
                     <span>Selected</span>
                   </div>
                   <div className="flex items-center gap-2">

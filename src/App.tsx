@@ -102,7 +102,7 @@ function App() {
                 onClick={() => setView('halls')}
                 className={`px-4 py-2 rounded-md mb-1 lg:m-auto ${
                   view === 'halls'
-                    ? 'w-full bg-yellow-700 text-white py-2 px-4 rounded-md hover:ring-2 hover:ring-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:ring-offset-2 transition-all duration-200'
+                    ? 'bg-yellow-700 text-white py-2 px-4 rounded-md hover:ring-2 hover:ring-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:ring-offset-2 transition-all duration-200'
                     : 'bg-gray-200 text-gray-700'
                 }`}
               >
@@ -112,7 +112,7 @@ function App() {
                 onClick={() => setView('bookings')}
                 className={`px-4 py-2 rounded-md mb-1 lg:m-auto ${
                   view === 'bookings'
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-yellow-700 text-white py-2 px-4 rounded-md hover:ring-2 hover:ring-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:ring-offset-2 transition-all duration-200'
                     : 'bg-gray-200 text-gray-700'
                 }`}
               >
