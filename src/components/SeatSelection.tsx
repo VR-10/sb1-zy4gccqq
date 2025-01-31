@@ -146,7 +146,7 @@ export function SeatSelection({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        Name
+                        Name <span className="text-red-500 text-xs">*</span>
                       </label>
                       <input
                         type="text"
@@ -161,7 +161,7 @@ export function SeatSelection({
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        Age
+                        Age <span className="text-red-500 text-xs">*</span>
                       </label>
                       <input
                         type="number"
@@ -180,7 +180,7 @@ export function SeatSelection({
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        Date of Birth
+                        Date of Birth <span className="text-red-500 text-xs">*</span>
                       </label>
                       <input
                         type="date"
@@ -194,7 +194,7 @@ export function SeatSelection({
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        Nationality
+                        Nationality <span className="text-red-500 text-xs">*</span>
                       </label>
                       <input
                         type="text"
@@ -213,26 +213,29 @@ export function SeatSelection({
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        Contact Number
+                        Contact Number <span className="text-red-500 text-xs">*</span>
                       </label>
-                      <input
-                        type="tel"
-                        placeholder="Enter contact number"
-                        required
-                        className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 shadow-sm placeholder:text-gray-400
-                        focus:border-yellow-600 focus:ring-yellow-600 transition-colors duration-200"
-                        onChange={(e) =>
-                          handleAttendeeChange(
-                            index,
-                            'contactNumber',
-                            e.target.value
-                          )
-                        }
-                      />
+                      <div className="relative mt-1">
+                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+                          +971
+                        </span>
+                        <input
+                          type="tel"
+                          placeholder="Enter contact number"
+                          required
+                          maxLength={9}
+                          className="pl-14 pr-4 py-2 block w-full rounded-md border-gray-300 shadow-sm placeholder:text-gray-400
+                            focus:border-yellow-600 focus:ring-yellow-600 transition-colors duration-200"
+                          onChange={(e) => {
+                            let value = e.target.value.replace(/\D/g, "").slice(0, 9);
+                            handleAttendeeChange(index, "contactNumber", value);
+                          }}
+                        />
+                      </div>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        Email
+                        Email <span className="text-red-500 text-xs">*</span>
                       </label>
                       <input
                         type="email"
