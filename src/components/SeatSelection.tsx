@@ -80,35 +80,40 @@ export function SeatSelection({
                   {hall.rows.map((row) => (
                     <div key={row} className="flex items-center mb-4 last:mb-0">
                       <div className="w-8 font-bold text-center">{row}</div>
-                      <div className="flex-1 grid grid-cols-10 gap-2">
-                        {Array.from({ length: hall.seatsPerRow }).map(
-                          (_, index) => {
-                            const seatId = `${row}${index + 1}`;
-                            const isBooked = bookedSeats.includes(seatId);
-                            const isSelected = selectedSeats.includes(seatId);
+                      <div className="flex-1 grid grid-cols-[repeat(auto-fit,minmax(40px,1fr))] gap-2 sm:gap-3 md:gap-4">
+  {Array.from({ length: hall.seatsPerRow }).map((_, index) => {
+    const seatId = `${row}${index + 1}`;
+    const isBooked = bookedSeats.includes(seatId);
+    const isSelected = selectedSeats.includes(seatId);
 
-                            return (
-                              <button
-                                key={seatId}
-                                onClick={() => handleSeatClick(seatId)}
-                                className={`
-                                w-8 h-8 rounded-t-lg flex items-center justify-center text-sm font-medium transition-colors
-                                ${
-                                  isBooked
-                                    ? 'bg-gray-300 cursor-not-allowed'
-                                    : isSelected
-                                    ? 'bg-yellow-600 text-white'
-                                    : 'bg-white border border-gray-300 hover:bg-gray-50'
-                                }
-                              `}
-                                disabled={isBooked}
-                              >
-                                {index + 1}
-                              </button>
-                            );
-                          }
-                        )}
-                      </div>
+    return (
+      <div key={seatId} className="flex flex-col items-center">
+        {/* Backrest */}
+        <div className={`w-6 sm:w-8 h-2 sm:h-3 rounded-t bg-gray-400 ${isBooked ? 'bg-gray-500' : isSelected ? 'bg-yellow-700' : 'bg-gray-300'}`} />
+
+        {/* Seat */}
+        <button
+          onClick={() => handleSeatClick(seatId)}
+          className={`
+            w-10 h-12 sm:w-12 sm:h-14 rounded-b-lg flex items-center justify-center text-sm font-medium transition-colors
+            shadow-md
+            ${
+              isBooked
+                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                : isSelected
+                ? 'bg-yellow-600 text-white'
+                : 'bg-gray-200 hover:bg-gray-300'
+            }
+          `}
+          disabled={isBooked}
+        >
+          {index + 1}
+        </button>
+      </div>
+    );
+  })}
+</div>
+
                       <div className="w-8"></div>
                     </div>
                   ))}
